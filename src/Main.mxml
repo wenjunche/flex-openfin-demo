@@ -8,17 +8,32 @@
         import mx.events.FlexEvent;
 
         protected function btnClickMe_clickHandler(event:MouseEvent):void {
-            Alert.show("Hello World");
+            ExternalInterface.call("moveOpenFinWindow");
         }
 
         protected function application_initializeHandler(event:FlexEvent):void {
             lblHeader.text = "My first flex app";
+            ExternalInterface.addCallback("onIABMessage", onIABMessage);
         }
+
+        protected function onIABMessage(message:String) {
+            lblIABLabel.text = message;
+        }
+
+        private function setupCallbacks():void
+        {
+            // Register the SWF client functions with the container
+            // ExternalInterface.addCallback("getStatus", getStatus);
+            // Notify the container that the SWF is ready to be called.
+            ExternalInterface.call("setSWFIsReady");
+        }
+
         ]]></fx:Script>
     <s:BorderContainer>
         <s:VGroup width="100%" height="100%" gap="50" horizontalAlign="center" verticalAlign="middle" styleName="container">
             <s:Label id="lblHeader" fontSize="40" color="0x777777" styleName="heading" />
-            <s:Button click="btnClickMe_clickHandler(event)" label="Say something"/>
+            <s:Button click="btnClickMe_clickHandler(event)" label="Move Me"/>
+            <s:Label id="lblIABLabel" fontSize="40" color="0x777777" styleName="heading" />
         </s:VGroup>
     </s:BorderContainer>
 </s:Application>
