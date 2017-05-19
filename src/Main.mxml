@@ -8,24 +8,19 @@
         import mx.events.FlexEvent;
 
         protected function btnClickMe_clickHandler(event:MouseEvent):void {
+            // calling moveOpenFinWindow defined in Javascript side
             ExternalInterface.call("moveOpenFinWindow");
         }
 
         protected function application_initializeHandler(event:FlexEvent):void {
             lblHeader.text = "My first flex app";
+            // expose a function to Javascript
             ExternalInterface.addCallback("onIABMessage", onIABMessage);
         }
 
         protected function onIABMessage(message:String) {
+            // called by Javascript side when receiving messages on Inter App Bus
             lblIABLabel.text = message;
-        }
-
-        private function setupCallbacks():void
-        {
-            // Register the SWF client functions with the container
-            // ExternalInterface.addCallback("getStatus", getStatus);
-            // Notify the container that the SWF is ready to be called.
-            ExternalInterface.call("setSWFIsReady");
         }
 
         ]]></fx:Script>

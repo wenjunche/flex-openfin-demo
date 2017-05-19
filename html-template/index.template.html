@@ -62,11 +62,15 @@
         <script type="text/javascript">
             fin.desktop.main(() => {
                 console.log('Connected to OpenFin');
+
                 fin.desktop.InterApplicationBus.subscribe('*', 'flex', m => {
+                    // calling function defined in ActionScript
                     var swf = document.getElementById('Main');
                     swf.onIABMessage(m);
                 });
             });
+
+            // export a function to ExternalInterface.call in ActionScript
             function moveOpenFinWindow() {
                 fin.desktop.Window.getCurrent().moveBy(10,10);
             }
