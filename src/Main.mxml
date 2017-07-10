@@ -44,7 +44,7 @@
             ExternalInterface.addCallback("onIABMessage", onIABMessage);
         }
 
-        protected function onIABMessage(message:String) {
+        protected function onIABMessage(message:String): void {
             // called by Javascript side when receiving messages on Inter App Bus
             lblIABLabel.text = message;
         }
@@ -68,7 +68,6 @@
         <s:VGroup width="100%" height="100%" gap="50" horizontalAlign="center" verticalAlign="middle" styleName="container">
             <s:Label id="lblHeader" fontSize="40" color="0x777777" styleName="heading" />
             <s:Button click="btnClickMe_clickHandler(event)" label="Move Me with JS"/>
-            <s:Button click="btnLaunchOF_clickHandler(event)" label="Launch OpenFin"/>
             <s:Label id="lblIABLabel" fontSize="40" color="0x777777" styleName="heading" />
         </s:VGroup>
     </s:BorderContainer>

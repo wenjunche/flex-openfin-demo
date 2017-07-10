@@ -8,6 +8,11 @@ This project is created with Intellij IDEA 2016.1.4.  To run the demo:
 2. start a webserver, such as http-server, from out/production/flex-hello-world
 3. start OpenFin Runtime with any HTML5 app.
 4. from OpenFin Runtime, create a app with URL pointing to Main.html in out/production/flex-hello-world
+
+    ```javascript
+       var app = new fin.desktop.Application({uuid:'abc',name:'abc', url:'http://localhost:8080/Main.html', autoShow:true, plugins: true});
+    ```
+
 5. clicking on "Move Me" button which triggers ActionScript to call OpenFin Javascript API to move the window
 6. from a HTML5 app, call
 
