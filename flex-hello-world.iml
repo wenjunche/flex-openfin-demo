@@ -4,6 +4,14 @@
     <configurations>
       <configuration name="flex-hello-world" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/flex-hello-world" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="6733560d-baa2-4111-a8bb-04ef89ff3ead">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="867ca049-fa71-40e6-aabf-1966313677d8">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
@@ -21,5 +29,25 @@
     </content>
     <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="6733560d-baa2-4111-a8bb-04ef89ff3ead" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../air-adapter/out/production/air-adapter/OpenFinAirAdapter-6.0.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="867ca049-fa71-40e6-aabf-1966313677d8" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../AirNativeExtensionLib/out/production/AirNativeExtensionLib/OpenFinAirNativeExtension.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
